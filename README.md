@@ -1,3 +1,7 @@
+how to use app:
+
+haw to part of project a server part (backend) and client side (frontend)
+
 the client side part:
 
 1 clone my repository
