@@ -1,0 +1,12 @@
+p{
+    text-align: justify;
+    color:rgb(144, 82, 82);
+    line-height: 1.9rem;
+}
+h1,h2,h3{
+    color: rgb(218, 57, 57);
+}
+li{
+    color:rgb(144, 82, 82);
+    list-style-type:decimal
+}

@@ -1,0 +1,14 @@
+p{
+    text-align: justify;
+    color:rgb(144, 82, 82)
+}
+h1,h2,h3{
+    color: rgb(218, 57, 57);
+}
+img{
+    width:600px ;
+    height: 500px;
+    /* object-fit: cover; */
+    border-radius: 15px;
+    margin-left: 15px;
+}

@@ -1,0 +1,62 @@
+<div class="container">
+  <div>
+    <h1>statistics:</h1>
+    <p>
+      cost of one cigaret: {{ this.costOfPack / this.pack | currency : "EUR" }}
+    </p>
+    <p>time of a packet: {{ this.pack * this.timeOfSmoke }} minute</p>
+  </div>
+  <div>
+    <h1>Settings</h1>
+    <div [hidden]="hidden">
+      <p>change of: {{ changeType }}</p>
+      <input
+        type="number"
+        [(ngModel)]="changeValue"
+        [ngModelOptions]="{ standalone: true }"
+        id="number"
+        min="0"
+      />
+      <p>{{ changeinput }}</p>
+      <div>
+        <button class="btn btn-primary mx-2" (click)="save()">save</button>
+        <button class="btn btn-danger mx-2" (click)="exitChange()">exit</button>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex flex-row">
+        <p class="mx-2">cost of packed</p>
+        <p class="mx-2">
+          {{ this.costOfPack }}
+        </p>
+        <p class="mx-2">
+          <button class="btn btn-warning" (click)="updatecostOfPack()">
+            change
+          </button>
+        </p>
+      </div>
+      <div class="d-flex flex-row">
+        <p class="mx-2">cost of packed</p>
+        <p class="mx-2">
+          {{ this.pack }}
+        </p>
+        <p class="mx-2">
+          <button class="btn btn-warning" (click)="updatePack()">change</button>
+        </p>
+      </div>
+
+      <div class="d-flex flex-row">
+        <p class="mx-2">time of smoke</p>
+
+        <p class="mx-2">
+          {{ this.timeOfSmoke }}
+        </p>
+        <p class="mx-2">
+          <button class="btn btn-warning" (click)="updatetimeOfSmoke()">
+            change
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

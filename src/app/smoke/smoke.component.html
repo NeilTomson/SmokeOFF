@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="">
+    <h1>Mai nap</h1>
+    <form class="py-2">
+      <div class="form-group mt-2">
+        <label>Ma: </label>
+        <input
+          type="date"
+          [(ngModel)]="date"
+          [ngModelOptions]="{ standalone: true }"
+          id="date"
+        />
+      </div>
+      <div class="form-group mt-2">
+        <label>Napi cigi szám: </label>
+        <input
+          type="number"
+          [(ngModel)]="number"
+          [ngModelOptions]="{ standalone: true }"
+          id="number"
+          min="0"
+        />
+      </div>
+      <button type="submit" (click)="save()" class="btn btn-primary mt-3">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="mt-4 container">
+    <h1>Táblázat</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nap</th>
+          <th scope="col">Napi cigi</th>
+          <th scope="col">Cigi ára</th>
+          <th scope="col">Egy cigi elszivásának ideje</th>
+          <th scope="col">Megváltozatatás</th>
+          <th scope="col">Törlés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let SmokeItem of SmokeArray">
+          <td>{{ SmokeItem.date.substring(0, 10) }}</td>
+          <td>{{ SmokeItem.number }}</td>
+          <td>
+            {{ (SmokeItem.number * costOfPack) / pack | currency : "EUR" }}
+          </td>
+          <td>{{ SmokeItem.number * timeOfSmoke }}minute</td>
+
+          <td>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="setUpdate(SmokeItem)"
+            >
+              Megváltozatatás
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="setDelete(SmokeItem)"
+            >
+              Törlés
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+
+li{
+    text-align: justify;
+    color:rgb(144, 82, 82);
+    list-style-type: decimal;
+    margin-top: 15px;
+}
+h1,h2,h3{
+    color: rgb(218, 57, 57);
+}
